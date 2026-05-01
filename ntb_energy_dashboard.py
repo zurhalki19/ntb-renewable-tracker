@@ -78,6 +78,23 @@ translations = {
         "popup_status": "Status",
         "popup_location": "Location",
         "popup_developer": "Developer",
+        "big_fossil": "~75% Fossil-Based Power",
+        "big_fossil_sub": "NTB electricity generation is still dominated by fossil fuels, mainly liquid fuels and coal.",
+        "big_capacity": "~13 GW Solar + Wind by 2050",
+        "big_capacity_sub": "The NZE pathway relies on a massive scale-up of solar PV and wind capacity.",
+        "big_invest": "Sumbawa is the Renewable Growth Hub",
+        "big_invest_sub": "Solar and wind potential make Sumbawa central to NTB’s long-term energy transition.",
+        "insight_current": "NTB’s power system is still heavily dependent on fossil fuels, while electricity demand is expected to grow significantly. This creates both a transition challenge and a major investment opportunity.",
+        "insight_masterplan": "The pathway is mainly about scaling solar and wind very fast, while cutting emissions toward net-zero by 2050.",
+        "insight_investment": "Investment should focus on solar PV, wind, storage, and grid readiness, especially in Sumbawa and the Lombok-Sumbawa system.",
+        "demand_callout": "Electricity demand could increase almost 10x by 2050 under the NZE pathway.",
+        "capacity_callout": "Solar PV becomes the dominant technology after 2030, supported by wind and storage.",
+        "emission_callout": "The NZE pathway reduces emissions sharply after 2030 and approaches net-zero by 2050.",
+        "why_invest": "Why invest in NTB?",
+        "why1": "High solar and wind potential, especially in Sumbawa.",
+        "why2": "Electricity demand is expected to grow strongly under electrification.",
+        "why3": "Storage and grid investment become critical for high renewable penetration.",
+        "why4": "The market is still early-stage, so good data visibility can support better investment decisions.",
         "news1_title": "NTB’s energy transition needs stronger data visibility",
         "news1_text": "This dashboard helps present key energy, pathway, and investment data in one public-facing platform.",
         "news2_title": "Solar and wind dominate the NZE pathway",
@@ -144,6 +161,23 @@ translations = {
         "popup_status": "Status",
         "popup_location": "Lokasi",
         "popup_developer": "Pengembang",
+        "big_fossil": "~75% Listrik Masih Berbasis Fosil",
+        "big_fossil_sub": "Produksi listrik NTB masih didominasi bahan bakar fosil, terutama BBM dan batubara.",
+        "big_capacity": "~13 GW Surya + Angin pada 2050",
+        "big_capacity_sub": "Pathway NZE bergantung pada peningkatan besar kapasitas PLTS dan angin.",
+        "big_invest": "Sumbawa adalah Pusat Pertumbuhan EBT",
+        "big_invest_sub": "Potensi surya dan angin membuat Sumbawa penting dalam transisi energi jangka panjang NTB.",
+        "insight_current": "Sistem kelistrikan NTB masih sangat bergantung pada energi fosil, sementara kebutuhan listrik diperkirakan meningkat signifikan. Ini menciptakan tantangan transisi sekaligus peluang investasi besar.",
+        "insight_masterplan": "Pathway ini terutama tentang peningkatan cepat PLTS dan angin, sambil menurunkan emisi menuju net-zero pada 2050.",
+        "insight_investment": "Investasi perlu difokuskan pada PLTS, angin, storage, dan kesiapan jaringan, terutama di Sumbawa dan sistem Lombok-Sumbawa.",
+        "demand_callout": "Kebutuhan listrik dapat meningkat hampir 10 kali lipat pada 2050 dalam pathway NZE.",
+        "capacity_callout": "PLTS menjadi teknologi dominan setelah 2030, didukung oleh angin dan storage.",
+        "emission_callout": "Pathway NZE menurunkan emisi secara tajam setelah 2030 dan mendekati net-zero pada 2050.",
+        "why_invest": "Mengapa investasi di NTB?",
+        "why1": "Potensi surya dan angin tinggi, terutama di Sumbawa.",
+        "why2": "Kebutuhan listrik diperkirakan tumbuh kuat karena elektrifikasi.",
+        "why3": "Storage dan jaringan menjadi penting untuk penetrasi EBT tinggi.",
+        "why4": "Pasar masih tahap awal, sehingga visibilitas data dapat mendukung keputusan investasi yang lebih baik.",
         "news1_title": "Transisi energi NTB memerlukan visibilitas data yang lebih kuat",
         "news1_text": "Dasbor ini membantu menyajikan data energi, pathway, dan investasi dalam satu platform publik.",
         "news2_title": "PLTS dan angin mendominasi pathway NZE",
@@ -209,18 +243,70 @@ st.markdown(
     div[data-baseweb="radio"] {{ background: rgba(255,255,255,0.5); backdrop-filter: blur(4px); border-radius: 40px; padding: 8px 12px; display: inline-flex; border: 1px solid rgba(255,255,255,0.6); }}
     div[data-baseweb="radio"] > div {{ gap: 6px; }}
     div[data-baseweb="radio"] label {{ border-radius: 30px; padding: 8px 22px; color: #0a2e4b; font-weight: 600; }}
+
     .hero-strip {{ background: linear-gradient(135deg, #0f4c75, #3282b8, #1b98b0); padding: 22px 28px; border-radius: 24px; color: white; margin-bottom: 22px; box-shadow: 0 12px 28px rgba(15,76,117,0.25); }}
     .hero-strip h2 {{ color: white !important; margin-bottom: 0.3rem; font-size: 2rem; }}
     .hero-strip p {{ color: rgba(255,255,255,0.95) !important; font-size: 1.1rem; }}
+
+    .big-number-card {{
+        background: rgba(255,255,255,0.82);
+        border: 1px solid rgba(255,255,255,0.75);
+        border-radius: 28px;
+        padding: 24px 28px;
+        margin-bottom: 22px;
+        box-shadow: 0 10px 26px rgba(25,80,120,0.13);
+    }}
+    .big-number {{
+        font-size: 3rem;
+        line-height: 1.05;
+        font-weight: 850;
+        color: #0f4c75;
+        letter-spacing: -0.04em;
+    }}
+    .big-sub {{
+        font-size: 1.08rem;
+        color: #1e4a6b;
+        margin-top: 8px;
+    }}
+    .big-tag {{
+        display: inline-block;
+        background: linear-gradient(135deg, #0f4c75, #3282b8);
+        color: white;
+        border-radius: 999px;
+        padding: 6px 13px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }}
+
     [data-testid="stMetric"] {{ background: rgba(255,255,255,0.85); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.7); padding: 20px; border-radius: 24px; box-shadow: 0 8px 22px rgba(25,80,120,0.15); transition: transform 0.2s; }}
     [data-testid="stMetric"]:hover {{ transform: translateY(-4px); background: rgba(255,255,255,0.95); }}
     [data-testid="stMetricLabel"] p {{ color: #0f4c75 !important; font-weight: 600; }}
     [data-testid="stMetricValue"] {{ color: #1b98b0 !important; font-size: 2rem !important; font-weight: 700; }}
+
     .soft-card {{ background: rgba(255,255,255,0.9); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.7); border-radius: 24px; padding: 20px; box-shadow: 0 8px 22px rgba(25,80,120,0.1); margin-bottom: 15px; }}
     .news-card {{ background: rgba(255,255,255,0.9); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.7); border-radius: 24px; padding: 18px; margin-bottom: 15px; box-shadow: 0 8px 22px rgba(25,80,120,0.1); border-left: 6px solid #3282b8; }}
     .news-card h4 {{ color: #0f4c75; margin-bottom: 6px; }}
     .mini-note {{ color: #2c6079; font-size: 0.92rem; background: rgba(255,255,255,0.65); padding: 8px 14px; border-radius: 30px; display: inline-block; margin-top: 8px; }}
-    .insight-box {{ background: rgba(255,255,255,0.86); border-left: 6px solid #1b98b0; border-radius: 20px; padding: 16px 18px; margin-bottom: 16px; color: #0a2e4b; box-shadow: 0 6px 18px rgba(25,80,120,0.10); }}
+
+    .insight-box {{
+        background: linear-gradient(135deg, #0f4c75, #3282b8);
+        color: white;
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        font-size: 1.05rem;
+        box-shadow: 0 10px 24px rgba(15,76,117,0.23);
+    }}
+    .chart-callout {{
+        background: rgba(255,255,255,0.74);
+        border-left: 6px solid #1b98b0;
+        border-radius: 18px;
+        padding: 12px 16px;
+        margin: 8px 0 14px 0;
+        color: #0a2e4b;
+        font-weight: 650;
+    }}
     .resource-list li {{ margin-bottom: 8px; }}
     .footer {{ text-align: center; padding-top: 20px; padding-bottom: 10px; color: #1e4a6b; font-size: 0.85rem; background: rgba(255,255,255,0.4); backdrop-filter: blur(2px); border-radius: 40px; margin-top: 30px; }}
     a {{ color: #1b98b0 !important; text-decoration: none; font-weight: 600; }}
@@ -328,13 +414,20 @@ st.markdown("---")
 
 # =========================================================
 # PAGE 1: CURRENT SITUATION
-# One message: fossil-heavy system + rising demand
 # =========================================================
 if page == "situasi":
     st.markdown(f"""
     <div class="hero-strip">
         <h2>{t('hero_situasi_title')}</h2>
         <p>{t('hero_situasi_desc')}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown(f"""
+    <div class="big-number-card">
+        <div class="big-tag">CURRENT SYSTEM</div>
+        <div class="big-number">{t('big_fossil')}</div>
+        <div class="big-sub">{t('big_fossil_sub')}</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -346,10 +439,11 @@ if page == "situasi":
     k4.metric(t("metric_emissions"), "~4.5 MtCO₂")
 
     st.markdown(f"### {t('snapshot_dashboard')}")
-    st.markdown("<div class='insight-box'><b>Insight:</b> NTB’s power generation is still dominated by liquid fuels and coal, while demand is expected to grow strongly under electrification.</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='insight-box'><b>Key Insight:</b><br>{t('insight_current')}</div>", unsafe_allow_html=True)
 
     left, right = st.columns([2.1, 1])
     with left:
+        st.markdown(f"<div class='chart-callout'>{t('big_fossil_sub')}</div>", unsafe_allow_html=True)
         fig_mix = px.pie(current_mix_data, names="Source", values="Share", title=t("generation_mix"), color="Source", color_discrete_map=color_map)
         fig_mix.update_layout(paper_bgcolor="rgba(0,0,0,0)")
         st.plotly_chart(fig_mix, use_container_width=True)
@@ -366,6 +460,7 @@ if page == "situasi":
             """, unsafe_allow_html=True)
 
     st.markdown(f"### {t('demand_trend')}")
+    st.markdown(f"<div class='chart-callout'>{t('demand_callout')}</div>", unsafe_allow_html=True)
     fig_demand = px.line(current_demand_data, x="Year", y="Electricity Demand (GWh)", markers=True, title=t("demand_trend"))
     fig_demand.update_traces(line=dict(width=3))
     fig_demand.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,0.8)")
@@ -375,7 +470,6 @@ if page == "situasi":
 
 # =========================================================
 # PAGE 2: MASTERPLAN
-# One message: massive solar/wind expansion + emission reduction
 # =========================================================
 elif page == "masterplan":
     st.markdown(f"""
@@ -385,28 +479,39 @@ elif page == "masterplan":
     </div>
     """, unsafe_allow_html=True)
 
+    st.markdown(f"""
+    <div class="big-number-card">
+        <div class="big-tag">2050 PATHWAY</div>
+        <div class="big-number">{t('big_capacity')}</div>
+        <div class="big-sub">{t('big_capacity_sub')}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
     s1, s2, s3, s4 = st.columns(4)
     s1.metric(t("nze_target"), "2050")
     s2.metric(t("key_driver"), "Solar PV")
     s3.metric(t("emerging_role"), "Wind + Storage")
     s4.metric(t("strategic_need"), "Grid + Storage")
 
-    st.markdown("<div class='insight-box'><b>Insight:</b> The pathway is mainly about scaling solar and wind very fast, while cutting emissions toward net-zero.</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='insight-box'><b>Key Insight:</b><br>{t('insight_masterplan')}</div>", unsafe_allow_html=True)
 
     c1, c2 = st.columns(2)
     with c1:
+        st.markdown(f"<div class='chart-callout'>{t('capacity_callout')}</div>", unsafe_allow_html=True)
         capacity_long = capacity_pathway_data.melt(id_vars="Year", var_name="Technology", value_name="Capacity")
         fig_capacity = px.area(capacity_long, x="Year", y="Capacity", color="Technology", color_discrete_map=color_map, title=t("capacity_pathway"))
         fig_capacity.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,0.8)")
         st.plotly_chart(fig_capacity, use_container_width=True)
 
     with c2:
+        st.markdown(f"<div class='chart-callout'>{t('emission_callout')}</div>", unsafe_allow_html=True)
         fig_emission = px.line(pathway_emission_data, x="Year", y="CO2 Emissions (MtCO2)", markers=True, title=t("co2_pathway"))
         fig_emission.update_traces(line=dict(width=3))
         fig_emission.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,0.8)")
         st.plotly_chart(fig_emission, use_container_width=True)
 
     st.markdown(f"### {t('demand_projection')}")
+    st.markdown(f"<div class='chart-callout'>{t('demand_callout')}</div>", unsafe_allow_html=True)
     fig_demand2 = px.line(current_demand_data, x="Year", y="Electricity Demand (GWh)", markers=True, title=t("demand_projection"))
     fig_demand2.update_traces(line=dict(width=3))
     fig_demand2.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,0.8)")
@@ -430,7 +535,6 @@ elif page == "masterplan":
 
 # =========================================================
 # PAGE 3: DATA & INVESTMENT HUB
-# One message: where investment should focus
 # =========================================================
 elif page == "datacenter":
     st.markdown(f"""
@@ -440,9 +544,31 @@ elif page == "datacenter":
     </div>
     """, unsafe_allow_html=True)
 
+    st.markdown(f"""
+    <div class="big-number-card">
+        <div class="big-tag">INVESTMENT FOCUS</div>
+        <div class="big-number">{t('big_invest')}</div>
+        <div class="big-sub">{t('big_invest_sub')}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown(f"<div class='insight-box'><b>Key Insight:</b><br>{t('insight_investment')}</div>", unsafe_allow_html=True)
+
     left_col, right_col = st.columns([1.05, 1.95])
 
     with left_col:
+        st.markdown(f"### {t('why_invest')}")
+        st.markdown(f"""
+        <div class="soft-card">
+            <ul>
+                <li>{t('why1')}</li>
+                <li>{t('why2')}</li>
+                <li>{t('why3')}</li>
+                <li>{t('why4')}</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
+
         st.markdown(f"### {t('resource_potential')}")
         resource_html = "<div class='soft-card'><ul class='resource-list'>"
         for resource, summary in resource_summary:
@@ -489,7 +615,7 @@ elif page == "datacenter":
                 fill_opacity=0.85
             ).add_to(m)
 
-        st_folium(m, width=None, height=560)
+        st_folium(m, width=None, height=580)
         st.markdown(f"""
         <div class="soft-card">
             <h4>Note</h4>
