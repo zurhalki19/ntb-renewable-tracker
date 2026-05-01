@@ -481,11 +481,11 @@ st.markdown(
         background: rgba(255,255,255,0.88);
         border: 1px solid rgba(255,255,255,0.75);
         border-radius: 28px;
-        padding: 28px;
-        min-height: 270px;
+        padding: 30px;
+        min-height: 300px;
         box-shadow: 0 12px 28px rgba(25,80,120,0.13);
         transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-        margin-bottom: 18px;
+        margin-bottom: 10px;
     }}
 
     .landing-card:hover {{
@@ -499,22 +499,46 @@ st.markdown(
         background: linear-gradient(135deg, #0f4c75, #3282b8);
         color: white;
         border-radius: 999px;
-        padding: 6px 13px;
+        padding: 7px 15px;
         font-size: 0.8rem;
         font-weight: 750;
-        margin-bottom: 16px;
+        margin-bottom: 28px;
     }}
 
     .landing-card h3 {{
         font-size: 1.55rem;
-        margin-bottom: 10px;
+        margin-bottom: 18px;
         color: #0a2e4b;
     }}
 
     .landing-card p {{
         color: #1e4a6b;
+        line-height: 1.7;
+        font-size: 1rem;
+    }}
+
+    .landing-cta-wrap {{
+        background: rgba(255,255,255,0.76);
+        border: 1px solid rgba(255,255,255,0.72);
+        border-radius: 28px;
+        padding: 24px 28px;
+        margin-top: 18px;
+        box-shadow: 0 10px 24px rgba(25,80,120,0.10);
+        text-align: center;
+    }}
+
+    .landing-cta-title {{
+        font-size: 1.45rem;
+        font-weight: 800;
+        color: #0a2e4b;
+        margin-bottom: 8px;
+    }}
+
+    .landing-cta-text {{
+        color: #1e4a6b;
         line-height: 1.6;
         font-size: 1rem;
+        margin-bottom: 10px;
     }}
 
     .hero-strip {{
@@ -714,16 +738,15 @@ st.markdown(
         background: linear-gradient(135deg, #0f4c75, #3282b8);
         color: white;
         border: none;
-        border-radius: 40px;
-        padding: 10px 28px;
-        font-weight: 600;
-        box-shadow: 0 4px 12px rgba(15,76,117,0.3);
-        width: 100%;
+        border-radius: 999px;
+        padding: 11px 26px;
+        font-weight: 650;
+        box-shadow: 0 4px 12px rgba(15,76,117,0.24);
     }}
 
     .stButton button:hover {{
         transform: translateY(-2px);
-        box-shadow: 0 7px 16px rgba(15,76,117,0.32);
+        box-shadow: 0 7px 16px rgba(15,76,117,0.30);
     }}
 
     @media (max-width: 900px) {{
@@ -1000,8 +1023,6 @@ if page == "landing":
             """,
             unsafe_allow_html=True
         )
-        if st.button(t("nav_situasi"), key="go_current"):
-            go_to_page("situasi")
 
     with c2:
         st.markdown(
@@ -1014,8 +1035,6 @@ if page == "landing":
             """,
             unsafe_allow_html=True
         )
-        if st.button(t("nav_masterplan"), key="go_masterplan"):
-            go_to_page("masterplan")
 
     with c3:
         st.markdown(
@@ -1028,21 +1047,24 @@ if page == "landing":
             """,
             unsafe_allow_html=True
         )
-        if st.button(t("nav_datacenter"), key="go_datacenter"):
-            go_to_page("datacenter")
 
     st.markdown(
         f"""
-        <div class="soft-card" style="margin-top: 14px;">
-            <h3 style="margin-bottom: 8px;">{t('landing_cta')}</h3>
-            <p style="color:#1e4a6b; line-height:1.6;">
-                This platform is designed to connect energy data, transition planning, and investment visibility in one place.
-                It is still a prototype, but it can support a more transparent discussion about NTB's renewable energy future.
-            </p>
+        <div class="landing-cta-wrap">
+            <div class="landing-cta-title">{t('landing_cta')}</div>
+            <div class="landing-cta-text">
+                Start with NTB’s current energy situation, then follow the transition pathway and investment opportunities.
+            </div>
         </div>
         """,
         unsafe_allow_html=True
     )
+
+    _, cta_col, _ = st.columns([1.35, 1, 1.35])
+
+    with cta_col:
+        if st.button(t("landing_cta"), key="go_explore"):
+            go_to_page("situasi")
 
 # =========================================================
 # PAGE 1: CURRENT SITUATION
@@ -1105,7 +1127,7 @@ elif page == "situasi":
             textinfo="percent+label",
             textfont_size=13,
             pull=[0.06 if v >= 20 else 0 for v in current_mix_data["Share"]],
-            hovertemplate="<b>%{label}</b><br>Share: %{value:.2f}%<extra></extra>"
+            hovertemplate="<b>%{{label}}</b><br>Share: %{{value:.2f}}%<extra></extra>"
         )
 
         fig_mix.update_layout(
