@@ -33,12 +33,12 @@ translations = {
         "nav_masterplan": "Energy Transition Masterplan",
         "nav_datacenter": "Data & Investment Hub",
 
+        "landing_kicker": "PUBLIC ENERGY TRANSITION DASHBOARD",
         "landing_title": "Tracking NTB’s renewable energy transition toward net-zero by 2050.",
         "landing_desc": "A public-facing dashboard for energy data, pathway monitoring, and investment visibility in West Nusa Tenggara.",
-        "landing_about_tag": "ABOUT THIS DASHBOARD",
-        "landing_about_title": "NTB Renewable Energy Tracker",
-        "landing_about_text": "Use the navigation above to explore current energy conditions, the NZE pathway, and the investment data hub.",
-        "landing_about_text2": "This prototype brings together current energy conditions, net-zero transition pathways, and renewable energy investment opportunities in one accessible platform.",
+        "landing_note": "This prototype brings together current energy conditions, net-zero transition pathways, and renewable energy investment opportunities in one accessible platform.",
+        "landing_guidance": "Use the navigation above to explore current energy conditions, the NZE pathway, and the investment data hub.",
+        "about_dashboard": "ABOUT THIS DASHBOARD",
         "data_status": "Data status",
         "data_status_text": "Prototype dashboard using extracted pathway data. Some project locations and intermediate values remain indicative.",
 
@@ -143,12 +143,12 @@ translations = {
         "nav_masterplan": "Masterplan Transisi Energi NTB",
         "nav_datacenter": "Data & Investment Hub",
 
+        "landing_kicker": "DASHBOARD PUBLIK TRANSISI ENERGI",
         "landing_title": "Memantau transisi energi terbarukan NTB menuju net-zero 2050.",
         "landing_desc": "Dashboard publik untuk data energi, pemantauan pathway, dan visibilitas investasi energi terbarukan di Nusa Tenggara Barat.",
-        "landing_about_tag": "TENTANG DASHBOARD INI",
-        "landing_about_title": "NTB Renewable Energy Tracker",
-        "landing_about_text": "Gunakan navigasi di atas untuk melihat situasi energi saat ini, pathway NZE, dan data hub investasi.",
-        "landing_about_text2": "Prototype ini menyatukan kondisi energi saat ini, pathway net-zero, dan peluang investasi energi terbarukan dalam satu platform yang mudah diakses.",
+        "landing_note": "Prototype ini menyatukan kondisi energi saat ini, pathway net-zero, dan peluang investasi energi terbarukan dalam satu platform yang mudah diakses.",
+        "landing_guidance": "Gunakan navigasi di atas untuk melihat situasi energi saat ini, pathway NZE, dan data hub investasi.",
+        "about_dashboard": "TENTANG DASHBOARD INI",
         "data_status": "Status data",
         "data_status_text": "Prototype dashboard menggunakan data pathway yang telah diekstrak. Beberapa lokasi proyek dan nilai antar tahun masih bersifat indikatif.",
 
@@ -354,6 +354,139 @@ st.markdown(
         font-weight: 600;
     }}
 
+    .landing-hero {{
+        background:
+            radial-gradient(circle at 15% 20%, rgba(255,255,255,0.50), transparent 27%),
+            linear-gradient(135deg, rgba(15,76,117,0.98), rgba(50,130,184,0.94), rgba(27,152,176,0.92));
+        color: white;
+        border-radius: 34px;
+        padding: 58px 58px;
+        margin-bottom: 22px;
+        box-shadow: 0 20px 45px rgba(15,76,117,0.28);
+        position: relative;
+        overflow: hidden;
+    }}
+
+    .landing-hero::after {{
+        content: "";
+        position: absolute;
+        right: -75px;
+        bottom: -90px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.12);
+    }}
+
+    .landing-kicker {{
+        display: inline-block;
+        background: rgba(255,255,255,0.18);
+        border: 1px solid rgba(255,255,255,0.25);
+        color: white;
+        border-radius: 999px;
+        padding: 8px 15px;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        margin-bottom: 18px;
+    }}
+
+    .landing-title {{
+        color: white !important;
+        font-size: 3.45rem;
+        line-height: 1.04;
+        font-weight: 880;
+        letter-spacing: -0.055em;
+        max-width: 920px;
+        margin-bottom: 18px;
+    }}
+
+    .landing-desc {{
+        color: rgba(255,255,255,0.94);
+        font-size: 1.23rem;
+        line-height: 1.65;
+        max-width: 820px;
+        margin-bottom: 18px;
+    }}
+
+    .landing-note {{
+        color: rgba(255,255,255,0.84);
+        font-size: 1rem;
+        max-width: 790px;
+        line-height: 1.58;
+    }}
+
+    .landing-info-card {{
+        background: linear-gradient(135deg, rgba(255,255,255,0.90), rgba(245,251,255,0.78));
+        border: 1px solid rgba(255,255,255,0.82);
+        border-radius: 28px;
+        padding: 26px 30px;
+        box-shadow: 0 14px 34px rgba(15,76,117,0.13);
+        color: #123c56;
+        margin-bottom: 28px;
+    }}
+
+    .landing-info-grid {{
+        display: grid;
+        grid-template-columns: 1.7fr 0.8fr;
+        gap: 24px;
+        align-items: start;
+    }}
+
+    .landing-info-label {{
+        display: inline-block;
+        background: rgba(15,76,117,0.10);
+        color: #0f4c75;
+        border: 1px solid rgba(15,76,117,0.12);
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.07em;
+        margin-bottom: 12px;
+    }}
+
+    .landing-info-card h3 {{
+        margin-top: 0;
+        margin-bottom: 8px;
+        color: #0a2e4b;
+        font-size: 1.45rem;
+        font-weight: 850;
+    }}
+
+    .landing-info-card p {{
+        margin-bottom: 8px;
+        line-height: 1.58;
+        color: #1e4a6b;
+    }}
+
+    .landing-status-box {{
+        background: rgba(15,76,117,0.07);
+        border: 1px solid rgba(15,76,117,0.10);
+        border-radius: 20px;
+        padding: 18px;
+    }}
+
+    .landing-status-title {{
+        color: #0a2e4b;
+        font-weight: 800;
+        margin-bottom: 8px;
+    }}
+
+    .landing-status-text {{
+        color: #2c6079;
+        font-size: 0.92rem;
+        line-height: 1.55;
+    }}
+
+    .landing-info-muted {{
+        margin-top: 14px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(15,76,117,0.10);
+        font-size: 0.88rem;
+        color: #517084 !important;
+    }}
+
     .hero-strip {{
         background: linear-gradient(135deg, #0f4c75, #3282b8, #1b98b0);
         padding: 22px 28px;
@@ -391,26 +524,10 @@ st.markdown(
         letter-spacing: -0.04em;
     }}
 
-    .big-number-sm {{
-        font-size: 2rem;
-        line-height: 1.15;
-        font-weight: 850;
-        color: #0f4c75;
-        letter-spacing: -0.03em;
-        margin-bottom: 12px;
-    }}
-
     .big-sub {{
         font-size: 1.08rem;
         color: #1e4a6b;
         margin-top: 8px;
-    }}
-
-    .big-body {{
-        font-size: 1.02rem;
-        color: #1e4a6b;
-        line-height: 1.7;
-        margin-top: 10px;
     }}
 
     .big-tag {{
@@ -458,16 +575,6 @@ st.markdown(
         padding: 20px;
         box-shadow: 0 8px 22px rgba(25,80,120,0.1);
         margin-bottom: 15px;
-    }}
-
-    .soft-card h4 {{
-        color: #0f4c75;
-        margin-bottom: 10px;
-    }}
-
-    .soft-card p {{
-        color: #1e4a6b;
-        line-height: 1.65;
     }}
 
     .news-card {{
@@ -584,12 +691,16 @@ st.markdown(
     }}
 
     @media (max-width: 900px) {{
-        .big-number {{
-            font-size: 2.2rem;
+        .landing-title {{
+            font-size: 2.35rem;
         }}
 
-        .big-number-sm {{
-            font-size: 1.6rem;
+        .landing-hero {{
+            padding: 34px 28px;
+        }}
+
+        .landing-info-grid {{
+            grid-template-columns: 1fr;
         }}
     }}
     </style>
@@ -598,7 +709,7 @@ st.markdown(
 )
 
 # =========================================================
-# DATA
+# DATA BASED ON NTB NET ZERO 2050 PATHWAY EXTRACTION
 # =========================================================
 current_mix_data = pd.DataFrame({
     "Source": ["HSD / Diesel", "MFO", "Biodiesel", "Coal", "Hydropower", "Solar PV", "Biomass / Cofiring"],
@@ -767,45 +878,39 @@ st.markdown("---")
 if page == "landing":
     st.markdown(
         f"""
-        <div class="hero-strip">
-            <h2>{t('landing_title')}</h2>
-            <p>{t('landing_desc')}</p>
+        <div class="landing-hero">
+            <div class="landing-kicker">{t('landing_kicker')}</div>
+            <div class="landing-title">{t('landing_title')}</div>
+            <div class="landing-desc">{t('landing_desc')}</div>
+            <div class="landing-note">{t('landing_note')}</div>
         </div>
         """,
         unsafe_allow_html=True
     )
 
-    left_col, right_col = st.columns([1.8, 1])
-
-    with left_col:
-        st.markdown(
-            f"""
-            <div class="big-number-card">
-                <div class="big-tag">{t('landing_about_tag')}</div>
-                <div class="big-number-sm">{t('landing_about_title')}</div>
-                <div class="big-body">{t('landing_about_text')}</div>
-                <div class="big-body">{t('landing_about_text2')}</div>
-                <div class="big-body" style="margin-top:16px;">
-                    <b>{t('footer_developed')} Muhammad Zurhalki</b> | {t('footer_anu')}<br>
-                    {t('footer_based')}
+    st.markdown(
+        f"""
+        <div class="landing-info-card">
+            <div class="landing-info-grid">
+                <div>
+                    <div class="landing-info-label">{t('about_dashboard')}</div>
+                    <h3>NTB Renewable Energy Tracker</h3>
+                    <p>{t('landing_guidance')}</p>
+                    <p>
+                        <b>{t('footer_developed')} Muhammad Zurhalki</b> | {t('footer_anu')}<br>
+                        {t('footer_based')}
+                    </p>
+                </div>
+                <div class="landing-status-box">
+                    <div class="landing-status-title">{t('data_status')}</div>
+                    <div class="landing-status-text">{t('data_status_text')}</div>
                 </div>
             </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-    with right_col:
-        st.markdown(
-            f"""
-            <div class="soft-card">
-                <h4>{t('data_status')}</h4>
-                <p>{t('data_status_text')}</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-    st.markdown(f'<p class="mini-note">{t("footer_illus")}</p>', unsafe_allow_html=True)
+            <p class="landing-info-muted">{t('footer_illus')}</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 # =========================================================
 # PAGE 1: CURRENT SITUATION
