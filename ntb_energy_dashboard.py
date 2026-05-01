@@ -35,28 +35,9 @@ translations = {
 
         "landing_kicker": "PUBLIC ENERGY TRANSITION DASHBOARD",
         "landing_title": "Tracking NTB’s renewable energy transition toward net-zero by 2050.",
-        "landing_desc": "This dashboard brings together energy system data, net-zero pathway insights, project pipeline information, and investment opportunities for West Nusa Tenggara.",
-        "landing_note": "Built as a public-facing prototype for transparency, research, policy discussion, and investment visibility.",
-        "landing_cta": "Explore the dashboard",
-
-        "landing_card1_title": "Current Situation",
-        "landing_card1_desc": "Understand NTB’s current electricity mix, renewable share, electricity demand, and fossil fuel dependence.",
-        "landing_card1_tag": "Energy baseline",
-
-        "landing_card2_title": "NZE Pathway",
-        "landing_card2_desc": "Explore the transition pathway toward 2050, including solar, wind, emissions reduction, and storage needs.",
-        "landing_card2_tag": "Transition roadmap",
-
-        "landing_card3_title": "Investment Hub",
-        "landing_card3_desc": "View resource potential, project pipeline, map-based opportunities, and priority investment areas.",
-        "landing_card3_tag": "Investor visibility",
-
-        "landing_big1": "~75%",
-        "landing_big1_label": "fossil-based electricity generation",
-        "landing_big2": "~13 GW",
-        "landing_big2_label": "solar and wind capacity by 2050",
-        "landing_big3": "2050",
-        "landing_big3_label": "net-zero transition horizon",
+        "landing_desc": "A public-facing dashboard for energy data, pathway monitoring, and investment visibility in West Nusa Tenggara.",
+        "landing_note": "This prototype brings together current energy conditions, net-zero transition pathways, and renewable energy investment opportunities in one accessible platform.",
+        "landing_guidance": "Use the navigation above to explore current energy conditions, the NZE pathway, and the investment data hub.",
 
         "hero_situasi_title": "NTB Current Energy Situation",
         "hero_situasi_desc": "NTB is still fossil-heavy, while electricity demand continues to grow.",
@@ -161,28 +142,9 @@ translations = {
 
         "landing_kicker": "DASHBOARD PUBLIK TRANSISI ENERGI",
         "landing_title": "Memantau transisi energi terbarukan NTB menuju net-zero 2050.",
-        "landing_desc": "Dashboard ini menyatukan data sistem energi, pathway net-zero, pipeline proyek, dan peluang investasi energi terbarukan di Nusa Tenggara Barat.",
-        "landing_note": "Dibangun sebagai prototype publik untuk transparansi, riset, diskusi kebijakan, dan visibilitas investasi.",
-        "landing_cta": "Jelajahi dashboard",
-
-        "landing_card1_title": "Situasi Saat Ini",
-        "landing_card1_desc": "Memahami bauran listrik NTB saat ini, porsi energi terbarukan, kebutuhan listrik, dan ketergantungan pada energi fosil.",
-        "landing_card1_tag": "Baseline energi",
-
-        "landing_card2_title": "Pathway NZE",
-        "landing_card2_desc": "Melihat jalur transisi menuju 2050, termasuk PLTS, angin, penurunan emisi, dan kebutuhan storage.",
-        "landing_card2_tag": "Roadmap transisi",
-
-        "landing_card3_title": "Investment Hub",
-        "landing_card3_desc": "Melihat potensi sumber daya, pipeline proyek, peta peluang, dan area prioritas investasi.",
-        "landing_card3_tag": "Visibilitas investor",
-
-        "landing_big1": "~75%",
-        "landing_big1_label": "pembangkit listrik masih berbasis fosil",
-        "landing_big2": "~13 GW",
-        "landing_big2_label": "kapasitas surya dan angin pada 2050",
-        "landing_big3": "2050",
-        "landing_big3_label": "horizon transisi net-zero",
+        "landing_desc": "Dashboard publik untuk data energi, pemantauan pathway, dan visibilitas investasi energi terbarukan di Nusa Tenggara Barat.",
+        "landing_note": "Prototype ini menyatukan kondisi energi saat ini, pathway net-zero, dan peluang investasi energi terbarukan dalam satu platform yang mudah diakses.",
+        "landing_guidance": "Gunakan navigasi di atas untuk melihat situasi energi saat ini, pathway NZE, dan data hub investasi.",
 
         "hero_situasi_title": "Situasi Energi NTB Saat Ini",
         "hero_situasi_desc": "NTB masih cukup bergantung pada energi fosil, sementara kebutuhan listrik terus meningkat.",
@@ -284,7 +246,7 @@ def t(key: str) -> str:
 
 
 # =========================================================
-# LANGUAGE SELECTOR FIRST
+# LANGUAGE SELECTOR
 # =========================================================
 lang_col_1, lang_col_2 = st.columns([4, 1])
 
@@ -388,12 +350,12 @@ st.markdown(
 
     .landing-hero {{
         background:
-            radial-gradient(circle at 15% 20%, rgba(255,255,255,0.55), transparent 28%),
+            radial-gradient(circle at 15% 20%, rgba(255,255,255,0.50), transparent 27%),
             linear-gradient(135deg, rgba(15,76,117,0.98), rgba(50,130,184,0.94), rgba(27,152,176,0.92));
         color: white;
         border-radius: 34px;
-        padding: 52px 54px;
-        margin-bottom: 26px;
+        padding: 58px 58px;
+        margin-bottom: 22px;
         box-shadow: 0 20px 45px rgba(15,76,117,0.28);
         position: relative;
         overflow: hidden;
@@ -402,10 +364,10 @@ st.markdown(
     .landing-hero::after {{
         content: "";
         position: absolute;
-        right: -70px;
-        bottom: -80px;
-        width: 280px;
-        height: 280px;
+        right: -75px;
+        bottom: -90px;
+        width: 300px;
+        height: 300px;
         border-radius: 50%;
         background: rgba(255,255,255,0.12);
     }}
@@ -425,7 +387,7 @@ st.markdown(
 
     .landing-title {{
         color: white !important;
-        font-size: 3.4rem;
+        font-size: 3.45rem;
         line-height: 1.04;
         font-weight: 880;
         letter-spacing: -0.055em;
@@ -434,111 +396,45 @@ st.markdown(
     }}
 
     .landing-desc {{
-        color: rgba(255,255,255,0.93);
-        font-size: 1.22rem;
+        color: rgba(255,255,255,0.94);
+        font-size: 1.23rem;
         line-height: 1.65;
-        max-width: 790px;
+        max-width: 820px;
         margin-bottom: 18px;
     }}
 
     .landing-note {{
-        color: rgba(255,255,255,0.82);
-        font-size: 0.98rem;
-        max-width: 760px;
-        line-height: 1.55;
-    }}
-
-    .landing-stats-wrap {{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-        margin-bottom: 26px;
-    }}
-
-    .landing-stat {{
-        background: rgba(255,255,255,0.86);
-        border: 1px solid rgba(255,255,255,0.75);
-        border-radius: 26px;
-        padding: 24px;
-        box-shadow: 0 10px 26px rgba(25,80,120,0.12);
-    }}
-
-    .landing-stat-number {{
-        color: #0f4c75;
-        font-size: 2.3rem;
-        font-weight: 850;
-        letter-spacing: -0.04em;
-        margin-bottom: 4px;
-    }}
-
-    .landing-stat-label {{
-        color: #1e4a6b;
+        color: rgba(255,255,255,0.84);
         font-size: 1rem;
-        font-weight: 600;
+        max-width: 790px;
+        line-height: 1.58;
     }}
 
-    .landing-card {{
-        background: rgba(255,255,255,0.88);
-        border: 1px solid rgba(255,255,255,0.75);
+    .landing-info-card {{
+        background: rgba(255,255,255,0.86);
+        border: 1px solid rgba(255,255,255,0.76);
         border-radius: 28px;
-        padding: 30px;
-        min-height: 300px;
-        box-shadow: 0 12px 28px rgba(25,80,120,0.13);
-        transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-        margin-bottom: 10px;
-    }}
-
-    .landing-card:hover {{
-        transform: translateY(-5px);
-        background: rgba(255,255,255,0.96);
-        box-shadow: 0 16px 34px rgba(25,80,120,0.18);
-    }}
-
-    .landing-card-tag {{
-        display: inline-block;
-        background: linear-gradient(135deg, #0f4c75, #3282b8);
-        color: white;
-        border-radius: 999px;
-        padding: 7px 15px;
-        font-size: 0.8rem;
-        font-weight: 750;
+        padding: 24px 30px;
+        box-shadow: 0 12px 28px rgba(25,80,120,0.12);
+        color: #1e4a6b;
         margin-bottom: 28px;
     }}
 
-    .landing-card h3 {{
-        font-size: 1.55rem;
-        margin-bottom: 18px;
-        color: #0a2e4b;
-    }}
-
-    .landing-card p {{
-        color: #1e4a6b;
-        line-height: 1.7;
-        font-size: 1rem;
-    }}
-
-    .landing-cta-wrap {{
-        background: rgba(255,255,255,0.76);
-        border: 1px solid rgba(255,255,255,0.72);
-        border-radius: 28px;
-        padding: 24px 28px;
-        margin-top: 18px;
-        box-shadow: 0 10px 24px rgba(25,80,120,0.10);
-        text-align: center;
-    }}
-
-    .landing-cta-title {{
-        font-size: 1.45rem;
-        font-weight: 800;
-        color: #0a2e4b;
+    .landing-info-card h3 {{
+        margin-top: 0;
         margin-bottom: 8px;
+        color: #0a2e4b;
+        font-size: 1.35rem;
     }}
 
-    .landing-cta-text {{
-        color: #1e4a6b;
-        line-height: 1.6;
-        font-size: 1rem;
-        margin-bottom: 10px;
+    .landing-info-card p {{
+        margin-bottom: 8px;
+        line-height: 1.58;
+    }}
+
+    .landing-info-muted {{
+        font-size: 0.88rem;
+        color: #2c6079;
     }}
 
     .hero-strip {{
@@ -739,14 +635,9 @@ st.markdown(
         color: white;
         border: none;
         border-radius: 999px;
-        padding: 11px 26px;
+        padding: 10px 24px;
         font-weight: 650;
         box-shadow: 0 4px 12px rgba(15,76,117,0.24);
-    }}
-
-    .stButton button:hover {{
-        transform: translateY(-2px);
-        box-shadow: 0 7px 16px rgba(15,76,117,0.30);
     }}
 
     @media (max-width: 900px) {{
@@ -756,10 +647,6 @@ st.markdown(
 
         .landing-hero {{
             padding: 34px 28px;
-        }}
-
-        .landing-stats-wrap {{
-            grid-template-columns: 1fr;
         }}
     }}
     </style>
@@ -822,62 +709,24 @@ download_items = pd.DataFrame({
 
 project_data = pd.DataFrame({
     "Project": [
-        "Lombok Peaker",
-        "Sedau Kumbi",
-        "Lombok FTP-2",
-        "Lunyuk Solar",
-        "Medang Solar",
-        "Dedieselisasi Solar",
-        "Sumbawa-2",
-        "Kokok Babak",
-        "Sumbawa-Bima Solar",
-        "Sumbawa-Bima Biomass",
-        "Sumbawa-Bima Geothermal",
-        "Lombok 3 EBT Base"
+        "Lombok Peaker", "Sedau Kumbi", "Lombok FTP-2", "Lunyuk Solar",
+        "Medang Solar", "Dedieselisasi Solar", "Sumbawa-2", "Kokok Babak",
+        "Sumbawa-Bima Solar", "Sumbawa-Bima Biomass", "Sumbawa-Bima Geothermal", "Lombok 3 EBT Base"
     ],
     "Technology": [
-        "Gas",
-        "Hydropower",
-        "Coal",
-        "Solar PV",
-        "Solar PV",
-        "Solar PV",
-        "Gas",
-        "Hydropower",
-        "Solar PV",
-        "Biomass",
-        "Geothermal",
-        "Renewable Base"
+        "Gas", "Hydropower", "Coal", "Solar PV", "Solar PV", "Solar PV",
+        "Gas", "Hydropower", "Solar PV", "Biomass", "Geothermal", "Renewable Base"
     ],
     "Capacity (MW)": [10, 1.3, 100, 2, 0.3, 8.4, 30, 2.3, 10, 10, 10, 100],
     "Status": [
-        "Operational",
-        "Operational",
-        "Under construction",
-        "Plan",
-        "Operational",
-        "Plan",
-        "Bidding",
-        "Under construction",
-        "Plan",
-        "Plan",
-        "Plan",
-        "Plan"
+        "Operational", "Operational", "Under construction", "Plan", "Operational", "Plan",
+        "Bidding", "Under construction", "Plan", "Plan", "Plan", "Plan"
     ],
     "Developer": ["PLN", "IPP", "PLN", "PLN", "PLN", "IPP", "PLN", "IPP", "IPP", "IPP", "PLN", "PLN"],
     "Location": [
-        "Lombok",
-        "Lombok",
-        "Lombok",
-        "Lunyuk / Isolated System",
-        "Medang / Isolated System",
-        "Isolated System",
-        "Sumbawa",
-        "Lombok",
-        "Sumbawa-Bima",
-        "Sumbawa-Bima",
-        "Sumbawa-Bima",
-        "Lombok"
+        "Lombok", "Lombok", "Lombok", "Lunyuk / Isolated System", "Medang / Isolated System",
+        "Isolated System", "Sumbawa", "Lombok", "Sumbawa-Bima", "Sumbawa-Bima",
+        "Sumbawa-Bima", "Lombok"
     ],
     "lat": [-8.65, -8.60, -8.70, -8.95, -8.50, -8.80, -8.55, -8.58, -8.45, -8.50, -8.45, -8.70],
     "lon": [116.30, 116.25, 116.35, 117.20, 117.10, 117.30, 117.45, 116.28, 118.20, 118.30, 118.25, 116.35]
@@ -936,11 +785,6 @@ def rotating_insight_box(insights, title="Key Insight:"):
     )
 
 
-def go_to_page(page_name: str):
-    st.session_state.page = page_name
-    st.rerun()
-
-
 # =========================================================
 # HEADER AND NAVIGATION
 # =========================================================
@@ -992,79 +836,18 @@ if page == "landing":
 
     st.markdown(
         f"""
-        <div class="landing-stats-wrap">
-            <div class="landing-stat">
-                <div class="landing-stat-number">{t('landing_big1')}</div>
-                <div class="landing-stat-label">{t('landing_big1_label')}</div>
-            </div>
-            <div class="landing-stat">
-                <div class="landing-stat-number">{t('landing_big2')}</div>
-                <div class="landing-stat-label">{t('landing_big2_label')}</div>
-            </div>
-            <div class="landing-stat">
-                <div class="landing-stat-number">{t('landing_big3')}</div>
-                <div class="landing-stat-label">{t('landing_big3_label')}</div>
-            </div>
+        <div class="landing-info-card">
+            <h3>NTB Renewable Energy Tracker</h3>
+            <p>{t('landing_guidance')}</p>
+            <p>
+                <b>{t('footer_developed')} Muhammad Zurhalki</b> | {t('footer_anu')}<br>
+                {t('footer_based')}
+            </p>
+            <p class="landing-info-muted">{t('footer_illus')}</p>
         </div>
         """,
         unsafe_allow_html=True
     )
-
-    c1, c2, c3 = st.columns(3)
-
-    with c1:
-        st.markdown(
-            f"""
-            <div class="landing-card">
-                <div class="landing-card-tag">{t('landing_card1_tag')}</div>
-                <h3>{t('landing_card1_title')}</h3>
-                <p>{t('landing_card1_desc')}</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-    with c2:
-        st.markdown(
-            f"""
-            <div class="landing-card">
-                <div class="landing-card-tag">{t('landing_card2_tag')}</div>
-                <h3>{t('landing_card2_title')}</h3>
-                <p>{t('landing_card2_desc')}</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-    with c3:
-        st.markdown(
-            f"""
-            <div class="landing-card">
-                <div class="landing-card-tag">{t('landing_card3_tag')}</div>
-                <h3>{t('landing_card3_title')}</h3>
-                <p>{t('landing_card3_desc')}</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-    st.markdown(
-        f"""
-        <div class="landing-cta-wrap">
-            <div class="landing-cta-title">{t('landing_cta')}</div>
-            <div class="landing-cta-text">
-                Start with NTB’s current energy situation, then follow the transition pathway and investment opportunities.
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    _, cta_col, _ = st.columns([1.35, 1, 1.35])
-
-    with cta_col:
-        if st.button(t("landing_cta"), key="go_explore"):
-            go_to_page("situasi")
 
 # =========================================================
 # PAGE 1: CURRENT SITUATION
@@ -1127,7 +910,7 @@ elif page == "situasi":
             textinfo="percent+label",
             textfont_size=13,
             pull=[0.06 if v >= 20 else 0 for v in current_mix_data["Share"]],
-            hovertemplate="<b>%{{label}}</b><br>Share: %{{value:.2f}}%<extra></extra>"
+            hovertemplate="<b>%{label}</b><br>Share: %{value:.2f}%<extra></extra>"
         )
 
         fig_mix.update_layout(
@@ -1499,17 +1282,18 @@ elif page == "datacenter":
 # =========================================================
 # FOOTER
 # =========================================================
-st.markdown(
-    f"""
-    <div class="footer">
-        <hr style="border-color: rgba(255,255,255,0.3);">
-        <p>
-        <b>NTB Renewable Energy Tracker</b><br>
-        {t('footer_developed')} <b>Muhammad Zurhalki</b> | {t('footer_anu')}<br>
-        {t('footer_based')}<br>
-        <span style="font-size:0.8rem;">{t('footer_illus')}</span>
-        </p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+if page != "landing":
+    st.markdown(
+        f"""
+        <div class="footer">
+            <hr style="border-color: rgba(255,255,255,0.3);">
+            <p>
+            <b>NTB Renewable Energy Tracker</b><br>
+            {t('footer_developed')} <b>Muhammad Zurhalki</b> | {t('footer_anu')}<br>
+            {t('footer_based')}<br>
+            <span style="font-size:0.8rem;">{t('footer_illus')}</span>
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
