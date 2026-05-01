@@ -412,52 +412,52 @@ st.markdown(
         line-height: 1.58;
     }}
 
-   .landing-info-card {{
-    text-align: center;
-    background: rgba(255,255,255,0.26);
-    backdrop-filter: blur(3px);
-    border-radius: 28px;
-    padding: 16px 24px;
-    margin-top: 10px;
-    margin-bottom: 18px;
-    color: #1e4a6b;
-    box-shadow: none;
-    border: none;
-}}
+    .landing-info-card {{
+        text-align: center;
+        background: rgba(255,255,255,0.26);
+        backdrop-filter: blur(3px);
+        border-radius: 28px;
+        padding: 16px 24px;
+        margin-top: 10px;
+        margin-bottom: 18px;
+        color: #1e4a6b;
+        box-shadow: none;
+        border: none;
+    }}
 
-   .landing-info-label {{
-    display: inline-block;
-    background: rgba(255,255,255,0.42);
-    color: #0f4c75;
-    border: 1px solid rgba(15,76,117,0.10);
-    border-radius: 999px;
-    padding: 5px 12px;
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    margin-bottom: 9px;
-}}
+    .landing-info-label {{
+        display: inline-block;
+        background: rgba(255,255,255,0.42);
+        color: #0f4c75;
+        border: 1px solid rgba(15,76,117,0.10);
+        border-radius: 999px;
+        padding: 5px 12px;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        margin-bottom: 9px;
+    }}
 
-  .landing-info-card h3 {{
-    margin-top: 0;
-    margin-bottom: 5px;
-    color: #0a2e4b;
-    font-size: 0.98rem;
-    font-weight: 800;
-}}
+    .landing-info-card h3 {{
+        margin-top: 0;
+        margin-bottom: 5px;
+        color: #0a2e4b;
+        font-size: 0.98rem;
+        font-weight: 800;
+    }}
 
-.landing-info-card p {{
-    margin-bottom: 5px;
-    line-height: 1.45;
-    color: #1e4a6b;
-    font-size: 0.88rem;
-}}
+    .landing-info-card p {{
+        margin-bottom: 5px;
+        line-height: 1.45;
+        color: #1e4a6b;
+        font-size: 0.88rem;
+    }}
 
-.landing-info-muted {{
-    margin-top: 6px;
-    font-size: 0.82rem;
-    color: #1e4a6b !important;
-}}
+    .landing-info-muted {{
+        margin-top: 6px;
+        font-size: 0.82rem;
+        color: #1e4a6b !important;
+    }}
 
     .hero-strip {{
         background: linear-gradient(135deg, #0f4c75, #3282b8, #1b98b0);
@@ -662,13 +662,194 @@ st.markdown(
         box-shadow: 0 4px 12px rgba(15,76,117,0.24);
     }}
 
-    @media (max-width: 900px) {{
-        .landing-title {{
-            font-size: 2.35rem;
+    /* =====================================================
+       MOBILE RESPONSIVE STYLE
+       ===================================================== */
+    @media (max-width: 768px) {{
+
+        .block-container {{
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.8rem;
+            padding-bottom: 1.2rem;
+        }}
+
+        .top-title {{
+            font-size: 2rem;
+            line-height: 1.1;
+            margin-bottom: 0.45rem;
+        }}
+
+        .top-subtitle {{
+            font-size: 0.92rem;
+            line-height: 1.55;
+            margin-bottom: 0.9rem;
+        }}
+
+        div[data-baseweb="radio"] {{
+            width: 100%;
+            display: block;
+            background: rgba(255,255,255,0.28);
+            border-radius: 22px;
+            padding: 8px 10px;
+            border: 1px solid rgba(255,255,255,0.45);
+        }}
+
+        div[data-baseweb="radio"] > div {{
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }}
+
+        div[data-baseweb="radio"] label {{
+            padding: 7px 10px;
+            font-size: 0.88rem;
+            line-height: 1.25;
+            border-radius: 16px;
         }}
 
         .landing-hero {{
-            padding: 34px 28px;
+            padding: 30px 24px;
+            border-radius: 26px;
+            margin-bottom: 14px;
+        }}
+
+        .landing-title {{
+            font-size: 1.95rem;
+            line-height: 1.12;
+            letter-spacing: -0.035em;
+        }}
+
+        .landing-desc {{
+            font-size: 0.96rem;
+            line-height: 1.55;
+        }}
+
+        .landing-note {{
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }}
+
+        .landing-kicker {{
+            font-size: 0.64rem;
+            padding: 6px 11px;
+            margin-bottom: 12px;
+        }}
+
+        .landing-info-card {{
+            padding: 12px 14px;
+            border-radius: 22px;
+            margin-top: 8px;
+            margin-bottom: 14px;
+        }}
+
+        .landing-info-label {{
+            font-size: 0.58rem;
+            padding: 4px 9px;
+            margin-bottom: 7px;
+        }}
+
+        .landing-info-card h3 {{
+            font-size: 0.9rem;
+        }}
+
+        .landing-info-card p {{
+            font-size: 0.78rem;
+            line-height: 1.42;
+        }}
+
+        .landing-info-muted {{
+            font-size: 0.76rem;
+            line-height: 1.42;
+        }}
+
+        .hero-strip {{
+            padding: 24px 24px;
+            border-radius: 26px;
+            margin-bottom: 16px;
+        }}
+
+        .hero-strip h2 {{
+            font-size: 1.7rem;
+            line-height: 1.18;
+        }}
+
+        .hero-strip p {{
+            font-size: 0.96rem;
+            line-height: 1.55;
+        }}
+
+        .big-number-card {{
+            padding: 19px 21px;
+            border-radius: 24px;
+            margin-bottom: 16px;
+        }}
+
+        .big-number {{
+            font-size: 1.85rem;
+            line-height: 1.12;
+        }}
+
+        .big-sub {{
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }}
+
+        .big-tag {{
+            font-size: 0.64rem;
+            padding: 5px 10px;
+        }}
+
+        [data-testid="stMetric"] {{
+            padding: 13px;
+            border-radius: 18px;
+        }}
+
+        [data-testid="stMetricValue"] {{
+            font-size: 1.35rem !important;
+        }}
+
+        [data-testid="stMetricLabel"] p {{
+            font-size: 0.82rem !important;
+        }}
+
+        .insight-box {{
+            padding: 15px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+        }}
+
+        .rotating-insights {{
+            min-height: 100px;
+        }}
+
+        .chart-callout {{
+            font-size: 0.85rem;
+            padding: 10px 13px;
+            border-radius: 15px;
+        }}
+
+        .soft-card,
+        .news-card {{
+            padding: 15px;
+            border-radius: 20px;
+        }}
+
+        .soft-card p,
+        .news-card p {{
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }}
+
+        .news-card h4 {{
+            font-size: 0.98rem;
+        }}
+
+        .footer {{
+            border-radius: 24px;
+            padding: 16px;
+            font-size: 0.76rem;
+            line-height: 1.5;
         }}
     }}
     </style>
@@ -938,7 +1119,7 @@ elif page == "situasi":
 
         fig_mix.update_layout(
             title=t("generation_mix"),
-            height=560,
+            height=460,
             margin=dict(t=55, b=90, l=20, r=20),
             showlegend=True,
             legend=dict(
@@ -997,7 +1178,7 @@ elif page == "situasi":
     )
 
     fig_demand.update_layout(
-        height=500,
+        height=420,
         margin=dict(t=60, b=40, l=20, r=20),
         hovermode="x unified",
         paper_bgcolor="rgba(0,0,0,0)",
@@ -1075,7 +1256,7 @@ elif page == "masterplan":
         )
 
         fig_capacity.update_layout(
-            height=520,
+            height=460,
             margin=dict(t=60, b=40, l=20, r=20),
             hovermode="x unified",
             legend=dict(
@@ -1109,7 +1290,7 @@ elif page == "masterplan":
         )
 
         fig_emission.update_layout(
-            height=520,
+            height=420,
             margin=dict(t=60, b=40, l=20, r=20),
             hovermode="x unified",
             paper_bgcolor="rgba(0,0,0,0)",
@@ -1136,7 +1317,7 @@ elif page == "masterplan":
     )
 
     fig_demand2.update_layout(
-        height=500,
+        height=420,
         margin=dict(t=60, b=40, l=20, r=20),
         hovermode="x unified",
         paper_bgcolor="rgba(0,0,0,0)",
