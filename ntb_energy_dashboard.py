@@ -298,6 +298,36 @@ st.markdown(
         font-size: 1.05rem;
         box-shadow: 0 10px 24px rgba(15,76,117,0.23);
     }}
+    .insight-title {
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+    .rotating-insights {
+        position: relative;
+        min-height: 62px;
+    }
+    .rotating-insights span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        animation: rotateInsight 50s infinite;
+        line-height: 1.55;
+        font-weight: 600;
+    }
+    .rotating-insights span:nth-child(1) { animation-delay: 0s; }
+    .rotating-insights span:nth-child(2) { animation-delay: 10s; }
+    .rotating-insights span:nth-child(3) { animation-delay: 20s; }
+    .rotating-insights span:nth-child(4) { animation-delay: 30s; }
+    .rotating-insights span:nth-child(5) { animation-delay: 40s; }
+    @keyframes rotateInsight {
+        0% { opacity: 0; transform: translateY(8px); }
+        4% { opacity: 1; transform: translateY(0); }
+        16% { opacity: 1; transform: translateY(0); }
+        20% { opacity: 0; transform: translateY(-8px); }
+        100% { opacity: 0; transform: translateY(-8px); }
+    }
     .chart-callout {{
         background: rgba(255,255,255,0.74);
         border-left: 6px solid #1b98b0;
@@ -399,6 +429,22 @@ def get_folium_color(tech: str) -> str:
         "Bioenergy": "green", "Geothermal": "red", "Gas": "lightblue", "Coal": "darkgray", "Renewable Base": "green"
     }.get(tech, "gray")
 
+
+def rotating_insight_box(insights, title="Key Insight:"):
+    """Create a subtle rotating insight card using CSS only."""
+    insight_spans = "".join([f"<span>{item}</span>" for item in insights])
+    st.markdown(
+        f"""
+        <div class="insight-box">
+            <div class="insight-title">{title}</div>
+            <div class="rotating-insights">
+                {insight_spans}
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 # =========================================================
 # HEADER AND NAVIGATION
 # =========================================================
@@ -439,7 +485,13 @@ if page == "situasi":
     k4.metric(t("metric_emissions"), "~4.5 MtCO₂")
 
     st.markdown(f"### {t('snapshot_dashboard')}")
-    st.markdown(f"<div class='insight-box'><b>Key Insight:</b><br>{t('insight_current')}</div>", unsafe_allow_html=True)
+    rotating_insight_box([
+        t("insight_current"),
+        "~75% of NTB electricity generation is still fossil-based.",
+        t("demand_callout"),
+        "Solar PV and wind create the main long-term investment story.",
+        "Data visibility is important for public trust and investor confidence."
+    ])
 
     left, right = st.columns([2.1, 1])
     with left:
@@ -539,7 +591,13 @@ elif page == "masterplan":
     s3.metric(t("emerging_role"), "Wind + Storage")
     s4.metric(t("strategic_need"), "Grid + Storage")
 
-    st.markdown(f"<div class='insight-box'><b>Key Insight:</b><br>{t('insight_masterplan')}</div>", unsafe_allow_html=True)
+    rotating_insight_box([
+        t("insight_masterplan"),
+        t("capacity_callout"),
+        t("emission_callout"),
+        "Solar PV could reach around 9.7 GW in the NZE pathway by 2050.",
+        t("storage_text")
+    ])
 
     c1, c2 = st.columns(2)
     with c1:
@@ -644,7 +702,13 @@ elif page == "datacenter":
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown(f"<div class='insight-box'><b>Key Insight:</b><br>{t('insight_investment')}</div>", unsafe_allow_html=True)
+    rotating_insight_box([
+        t("insight_investment"),
+        t("big_invest_sub"),
+        t("why1"),
+        t("why3"),
+        "The project map is indicative and should be updated with official project coordinates."
+    ])
 
     left_col, right_col = st.columns([1.05, 1.95])
 
