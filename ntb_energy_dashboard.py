@@ -444,9 +444,45 @@ if page == "situasi":
     left, right = st.columns([2.1, 1])
     with left:
         st.markdown(f"<div class='chart-callout'>{t('big_fossil_sub')}</div>", unsafe_allow_html=True)
-        fig_mix = px.pie(current_mix_data, names="Source", values="Share", title=t("generation_mix"), color="Source", color_discrete_map=color_map)
-        fig_mix.update_layout(paper_bgcolor="rgba(0,0,0,0)")
-        st.plotly_chart(fig_mix, use_container_width=True)
+        fig_mix = px.pie(
+            current_mix_data,
+            names="Source",
+            values="Share",
+            color="Source",
+            color_discrete_map=color_map,
+            hole=0.45
+        )
+        fig_mix.update_traces(
+            textinfo="percent+label",
+            textfont_size=13,
+            pull=[0.06 if v >= 20 else 0 for v in current_mix_data["Share"]],
+            hovertemplate="<b>%{label}</b><br>Share: %{value:.2f}%<extra></extra>"
+        )
+        fig_mix.update_layout(
+            title=t("generation_mix"),
+            height=560,
+            margin=dict(t=55, b=90, l=20, r=20),
+            showlegend=True,
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=-0.18,
+                xanchor="center",
+                x=0.5,
+                font=dict(size=12)
+            ),
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)"
+        )
+        fig_mix.add_annotation(
+            text="Energy<br>Mix",
+            x=0.5,
+            y=0.5,
+            font_size=17,
+            font_color="#0f4c75",
+            showarrow=False
+        )
+        st.plotly_chart(fig_mix, use_container_width=True, config={"displayModeBar": True})
 
     with right:
         st.markdown(f"### {t('latest_updates')}")
@@ -462,9 +498,19 @@ if page == "situasi":
     st.markdown(f"### {t('demand_trend')}")
     st.markdown(f"<div class='chart-callout'>{t('demand_callout')}</div>", unsafe_allow_html=True)
     fig_demand = px.line(current_demand_data, x="Year", y="Electricity Demand (GWh)", markers=True, title=t("demand_trend"))
-    fig_demand.update_traces(line=dict(width=3))
-    fig_demand.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,0.8)")
-    st.plotly_chart(fig_demand, use_container_width=True)
+    fig_demand.update_traces(
+        line=dict(width=4),
+        marker=dict(size=9),
+        hovertemplate="Year: %{x}<br>Demand: %{y:,.0f} GWh<extra></extra>"
+    )
+    fig_demand.update_layout(
+        height=500,
+        margin=dict(t=60, b=40, l=20, r=20),
+        hovermode="x unified",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(255,255,255,0.8)"
+    )
+    st.plotly_chart(fig_demand, use_container_width=True, config={"displayModeBar": True})
 
     st.markdown(f'<p class="mini-note">{t("note_illustrative")}</p>', unsafe_allow_html=True)
 
@@ -499,23 +545,69 @@ elif page == "masterplan":
     with c1:
         st.markdown(f"<div class='chart-callout'>{t('capacity_callout')}</div>", unsafe_allow_html=True)
         capacity_long = capacity_pathway_data.melt(id_vars="Year", var_name="Technology", value_name="Capacity")
-        fig_capacity = px.area(capacity_long, x="Year", y="Capacity", color="Technology", color_discrete_map=color_map, title=t("capacity_pathway"))
-        fig_capacity.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,0.8)")
-        st.plotly_chart(fig_capacity, use_container_width=True)
+        fig_capacity = px.area(
+            capacity_long,
+            x="Year",
+            y="Capacity",
+            color="Technology",
+            color_discrete_map=color_map,
+            title=t("capacity_pathway"),
+            hover_data={"Capacity": ":,.0f", "Year": True, "Technology": True}
+        )
+        fig_capacity.update_traces(
+            mode="lines",
+            line=dict(width=1.5),
+            hovertemplate="<b>%{fullData.name}</b><br>Year: %{x}<br>Capacity: %{y:,.0f} MW<extra></extra>"
+        )
+        fig_capacity.update_layout(
+            height=520,
+            margin=dict(t=60, b=40, l=20, r=20),
+            hovermode="x unified",
+            legend=dict(orientation="h", yanchor="bottom", y=-0.28, xanchor="center", x=0.5),
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(255,255,255,0.8)"
+        )
+        st.plotly_chart(fig_capacity, use_container_width=True, config={"displayModeBar": True})
 
     with c2:
         st.markdown(f"<div class='chart-callout'>{t('emission_callout')}</div>", unsafe_allow_html=True)
-        fig_emission = px.line(pathway_emission_data, x="Year", y="CO2 Emissions (MtCO2)", markers=True, title=t("co2_pathway"))
-        fig_emission.update_traces(line=dict(width=3))
-        fig_emission.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,0.8)")
-        st.plotly_chart(fig_emission, use_container_width=True)
+        fig_emission = px.line(
+            pathway_emission_data,
+            x="Year",
+            y="CO2 Emissions (MtCO2)",
+            markers=True,
+            title=t("co2_pathway")
+        )
+        fig_emission.update_traces(
+            line=dict(width=4),
+            marker=dict(size=9),
+            hovertemplate="Year: %{x}<br>Emissions: %{y:.2f} MtCO₂<extra></extra>"
+        )
+        fig_emission.update_layout(
+            height=520,
+            margin=dict(t=60, b=40, l=20, r=20),
+            hovermode="x unified",
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(255,255,255,0.8)"
+        )
+        st.plotly_chart(fig_emission, use_container_width=True, config={"displayModeBar": True})
 
     st.markdown(f"### {t('demand_projection')}")
     st.markdown(f"<div class='chart-callout'>{t('demand_callout')}</div>", unsafe_allow_html=True)
     fig_demand2 = px.line(current_demand_data, x="Year", y="Electricity Demand (GWh)", markers=True, title=t("demand_projection"))
-    fig_demand2.update_traces(line=dict(width=3))
-    fig_demand2.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,0.8)")
-    st.plotly_chart(fig_demand2, use_container_width=True)
+    fig_demand2.update_traces(
+        line=dict(width=4),
+        marker=dict(size=9),
+        hovertemplate="Year: %{x}<br>Demand: %{y:,.0f} GWh<extra></extra>"
+    )
+    fig_demand2.update_layout(
+        height=500,
+        margin=dict(t=60, b=40, l=20, r=20),
+        hovermode="x unified",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(255,255,255,0.8)"
+    )
+    st.plotly_chart(fig_demand2, use_container_width=True, config={"displayModeBar": True})
 
     st.markdown(f"### {t('key_messages')}")
     st.markdown(f"""
