@@ -321,13 +321,13 @@ st.markdown(
     .rotating-insights span:nth-child(3) { animation-delay: 20s; }
     .rotating-insights span:nth-child(4) { animation-delay: 30s; }
     .rotating-insights span:nth-child(5) { animation-delay: 40s; }
-    @keyframes rotateInsight {
-        0% { opacity: 0; transform: translateY(8px); }
-        4% { opacity: 1; transform: translateY(0); }
-        16% { opacity: 1; transform: translateY(0); }
-        20% { opacity: 0; transform: translateY(-8px); }
-        100% { opacity: 0; transform: translateY(-8px); }
-    }
+   @keyframes rotateInsight {{
+    0% {{ opacity: 0; transform: translateY(8px); }}
+    4% {{ opacity: 1; transform: translateY(0); }}
+    16% {{ opacity: 1; transform: translateY(0); }}
+    20% {{ opacity: 0; transform: translateY(-8px); }}
+    100% {{ opacity: 0; transform: translateY(-8px); }}
+}}
     .chart-callout {{
         background: rgba(255,255,255,0.74);
         border-left: 6px solid #1b98b0;
