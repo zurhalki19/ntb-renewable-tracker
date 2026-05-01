@@ -58,6 +58,7 @@ translations = {
         "latest_updates": "Latest Updates",
         "read_more": "Read more →",
 
+        "mix_note": "Other Renewables includes hydropower, solar PV, and biomass/cofiring. Detailed technology values are still available in the source data.",
         "note_illustrative": "Note: Values are based on extracted NTB Energy Masterplan data. Some values, especially project coordinates and intermediate years, are indicative.",
         "nze_target": "NZE Target",
         "key_driver": "Key Driver",
@@ -166,6 +167,7 @@ translations = {
         "latest_updates": "Update Terbaru",
         "read_more": "Baca selengkapnya →",
 
+        "mix_note": "Other Renewables mencakup PLTA, PLTS, dan biomassa/cofiring. Detail nilai tiap teknologi tetap tersedia pada data sumber.",
         "note_illustrative": "Catatan: Nilai berasal dari ekstraksi Masterplan Energi NTB. Beberapa nilai, terutama koordinat proyek dan tahun antara, masih indikatif.",
         "nze_target": "Target NZE",
         "key_driver": "Penggerak Utama",
@@ -662,9 +664,6 @@ st.markdown(
         box-shadow: 0 4px 12px rgba(15,76,117,0.24);
     }}
 
-    /* =====================================================
-       MOBILE RESPONSIVE STYLE
-       ===================================================== */
     @media (max-width: 768px) {{
 
         .block-container {{
@@ -860,9 +859,15 @@ st.markdown(
 # =========================================================
 # DATA BASED ON NTB ENERGY MASTERPLAN EXTRACTION
 # =========================================================
-current_mix_data = pd.DataFrame({
+current_mix_detail_data = pd.DataFrame({
     "Source": ["HSD / Diesel", "MFO", "Biodiesel", "Coal", "Hydropower", "Solar PV", "Biomass / Cofiring"],
     "Share": [40.41, 16.48, 14.32, 24.76, 1.78, 2.11, 0.14]
+})
+
+# Cleaner grouped version for donut chart readability
+current_mix_data = pd.DataFrame({
+    "Source": ["HSD / Diesel", "Coal", "MFO", "Biodiesel", "Other Renewables"],
+    "Share": [40.41, 24.76, 16.48, 14.32, 1.78 + 2.11 + 0.14]
 })
 
 current_re_capacity_data = pd.DataFrame({
@@ -948,7 +953,7 @@ color_map = {
     "Bioenergy": "#7cb342",
     "Biomass": "#7cb342",
     "Biomass / Cofiring": "#7cb342",
-    "Geothermal": "#ef4444",
+    "Other Renewables": "#7cb342",
     "HSD / Diesel": "#2c7fb8",
     "MFO": "#64748b",
     "Biodiesel": "#14b8a6",
@@ -1107,29 +1112,33 @@ elif page == "situasi":
             values="Share",
             color="Source",
             color_discrete_map=color_map,
-            hole=0.45
+            hole=0.48
         )
 
         fig_mix.update_traces(
-            textinfo="percent+label",
-            textfont_size=13,
-            pull=[0.06 if v >= 20 else 0 for v in current_mix_data["Share"]],
+            textinfo="label+percent",
+            textposition="inside",
+            insidetextorientation="radial",
+            textfont_size=12,
+            marker=dict(line=dict(color="rgba(255,255,255,0.9)", width=2)),
             hovertemplate="<b>%{label}</b><br>Share: %{value:.2f}%<extra></extra>"
         )
 
         fig_mix.update_layout(
             title=t("generation_mix"),
             height=460,
-            margin=dict(t=55, b=90, l=20, r=20),
+            margin=dict(t=55, b=105, l=20, r=20),
             showlegend=True,
             legend=dict(
                 orientation="h",
                 yanchor="bottom",
-                y=-0.18,
+                y=-0.24,
                 xanchor="center",
                 x=0.5,
                 font=dict(size=12)
             ),
+            uniformtext_minsize=10,
+            uniformtext_mode="hide",
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)"
         )
@@ -1144,6 +1153,8 @@ elif page == "situasi":
         )
 
         st.plotly_chart(fig_mix, use_container_width=True, config={"displayModeBar": True})
+
+        st.markdown(f'<p class="mini-note">{t("mix_note")}</p>', unsafe_allow_html=True)
 
     with right:
         st.markdown(f"### {t('latest_updates')}")
