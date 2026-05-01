@@ -412,52 +412,52 @@ st.markdown(
         line-height: 1.58;
     }}
 
-    .landing-info-card {{
-        text-align: center;
-        background: rgba(255,255,255,0.32);
-        backdrop-filter: blur(3px);
-        border-radius: 34px;
-        padding: 26px 32px;
-        margin-top: 18px;
-        margin-bottom: 24px;
-        color: #1e4a6b;
-        box-shadow: none;
-        border: none;
-    }}
+   .landing-info-card {{
+    text-align: center;
+    background: rgba(255,255,255,0.26);
+    backdrop-filter: blur(3px);
+    border-radius: 28px;
+    padding: 16px 24px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    color: #1e4a6b;
+    box-shadow: none;
+    border: none;
+}}
 
-    .landing-info-label {{
-        display: inline-block;
-        background: rgba(255,255,255,0.46);
-        color: #0f4c75;
-        border: 1px solid rgba(15,76,117,0.10);
-        border-radius: 999px;
-        padding: 7px 15px;
-        font-size: 0.76rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        margin-bottom: 14px;
-    }}
+   .landing-info-label {{
+    display: inline-block;
+    background: rgba(255,255,255,0.42);
+    color: #0f4c75;
+    border: 1px solid rgba(15,76,117,0.10);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 9px;
+}}
 
-    .landing-info-card h3 {{
-        margin-top: 0;
-        margin-bottom: 8px;
-        color: #0a2e4b;
-        font-size: 1.1rem;
-        font-weight: 800;
-    }}
+  .landing-info-card h3 {{
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #0a2e4b;
+    font-size: 0.98rem;
+    font-weight: 800;
+}}
 
-    .landing-info-card p {{
-        margin-bottom: 7px;
-        line-height: 1.55;
-        color: #1e4a6b;
-        font-size: 0.98rem;
-    }}
+.landing-info-card p {{
+    margin-bottom: 5px;
+    line-height: 1.45;
+    color: #1e4a6b;
+    font-size: 0.88rem;
+}}
 
-    .landing-info-muted {{
-        margin-top: 10px;
-        font-size: 0.92rem;
-        color: #1e4a6b !important;
-    }}
+.landing-info-muted {{
+    margin-top: 6px;
+    font-size: 0.82rem;
+    color: #1e4a6b !important;
+}}
 
     .hero-strip {{
         background: linear-gradient(135deg, #0f4c75, #3282b8, #1b98b0);
