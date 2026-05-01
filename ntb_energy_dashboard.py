@@ -39,8 +39,6 @@ translations = {
         "landing_note": "This prototype brings together current energy conditions, net-zero transition pathways, and renewable energy investment opportunities in one accessible platform.",
         "landing_guidance": "Use the navigation above to explore current energy conditions, the NZE pathway, and the investment data hub.",
         "about_dashboard": "ABOUT THIS DASHBOARD",
-        "data_status": "Data status",
-        "data_status_text": "Prototype dashboard using extracted pathway data. Some project locations and intermediate values remain indicative.",
 
         "hero_situasi_title": "NTB Current Energy Situation",
         "hero_situasi_desc": "NTB is still fossil-heavy, while electricity demand continues to grow.",
@@ -60,7 +58,7 @@ translations = {
         "latest_updates": "Latest Updates",
         "read_more": "Read more →",
 
-        "note_illustrative": "Note: Values are based on extracted NTB Energy Masterplan / Net Zero 2050 pathway data. Some values, especially project coordinates and intermediate years, are indicative.",
+        "note_illustrative": "Note: Values are based on extracted NTB Energy Masterplan data. Some values, especially project coordinates and intermediate years, are indicative.",
         "nze_target": "NZE Target",
         "key_driver": "Key Driver",
         "emerging_role": "Emerging Role",
@@ -91,7 +89,7 @@ translations = {
 
         "footer_developed": "Developed by",
         "footer_anu": "Australian National University",
-        "footer_based": "Based on NTB Energy Masterplan / Net Zero 2050 pathway extraction",
+        "footer_based": "Based on NTB Energy Masterplan extraction",
         "footer_illus": "Some values are scenario-based or indicative and should be verified with official data before policy or investment decisions.",
 
         "opportunity": "Opportunity",
@@ -149,8 +147,6 @@ translations = {
         "landing_note": "Prototype ini menyatukan kondisi energi saat ini, pathway net-zero, dan peluang investasi energi terbarukan dalam satu platform yang mudah diakses.",
         "landing_guidance": "Gunakan navigasi di atas untuk melihat situasi energi saat ini, pathway NZE, dan data hub investasi.",
         "about_dashboard": "TENTANG DASHBOARD INI",
-        "data_status": "Status data",
-        "data_status_text": "Prototype dashboard menggunakan data pathway yang telah diekstrak. Beberapa lokasi proyek dan nilai antar tahun masih bersifat indikatif.",
 
         "hero_situasi_title": "Situasi Energi NTB Saat Ini",
         "hero_situasi_desc": "NTB masih cukup bergantung pada energi fosil, sementara kebutuhan listrik terus meningkat.",
@@ -170,7 +166,7 @@ translations = {
         "latest_updates": "Update Terbaru",
         "read_more": "Baca selengkapnya →",
 
-        "note_illustrative": "Catatan: Nilai berasal dari ekstraksi Masterplan Energi NTB / Net Zero 2050 pathway. Beberapa nilai, terutama koordinat proyek dan tahun antara, masih indikatif.",
+        "note_illustrative": "Catatan: Nilai berasal dari ekstraksi Masterplan Energi NTB. Beberapa nilai, terutama koordinat proyek dan tahun antara, masih indikatif.",
         "nze_target": "Target NZE",
         "key_driver": "Penggerak Utama",
         "emerging_role": "Peran yang Muncul",
@@ -201,7 +197,7 @@ translations = {
 
         "footer_developed": "Dikembangkan oleh",
         "footer_anu": "Australian National University",
-        "footer_based": "Berdasarkan ekstraksi Masterplan Energi NTB / Net Zero 2050 pathway",
+        "footer_based": "Berdasarkan ekstraksi Masterplan Energi NTB",
         "footer_illus": "Beberapa nilai berbasis skenario atau indikatif dan perlu diverifikasi dengan data resmi sebelum digunakan untuk keputusan kebijakan atau investasi.",
 
         "opportunity": "Peluang",
@@ -417,74 +413,50 @@ st.markdown(
     }}
 
     .landing-info-card {{
-        background: linear-gradient(135deg, rgba(255,255,255,0.90), rgba(245,251,255,0.78));
-        border: 1px solid rgba(255,255,255,0.82);
-        border-radius: 28px;
-        padding: 26px 30px;
-        box-shadow: 0 14px 34px rgba(15,76,117,0.13);
-        color: #123c56;
-        margin-bottom: 28px;
-    }}
-
-    .landing-info-grid {{
-        display: grid;
-        grid-template-columns: 1.7fr 0.8fr;
-        gap: 24px;
-        align-items: start;
+        text-align: center;
+        background: rgba(255,255,255,0.32);
+        backdrop-filter: blur(3px);
+        border-radius: 34px;
+        padding: 26px 32px;
+        margin-top: 18px;
+        margin-bottom: 24px;
+        color: #1e4a6b;
+        box-shadow: none;
+        border: none;
     }}
 
     .landing-info-label {{
         display: inline-block;
-        background: rgba(15,76,117,0.10);
+        background: rgba(255,255,255,0.46);
         color: #0f4c75;
-        border: 1px solid rgba(15,76,117,0.12);
+        border: 1px solid rgba(15,76,117,0.10);
         border-radius: 999px;
-        padding: 6px 12px;
+        padding: 7px 15px;
         font-size: 0.76rem;
         font-weight: 800;
-        letter-spacing: 0.07em;
-        margin-bottom: 12px;
+        letter-spacing: 0.08em;
+        margin-bottom: 14px;
     }}
 
     .landing-info-card h3 {{
         margin-top: 0;
         margin-bottom: 8px;
         color: #0a2e4b;
-        font-size: 1.45rem;
-        font-weight: 850;
+        font-size: 1.1rem;
+        font-weight: 800;
     }}
 
     .landing-info-card p {{
-        margin-bottom: 8px;
-        line-height: 1.58;
-        color: #1e4a6b;
-    }}
-
-    .landing-status-box {{
-        background: rgba(15,76,117,0.07);
-        border: 1px solid rgba(15,76,117,0.10);
-        border-radius: 20px;
-        padding: 18px;
-    }}
-
-    .landing-status-title {{
-        color: #0a2e4b;
-        font-weight: 800;
-        margin-bottom: 8px;
-    }}
-
-    .landing-status-text {{
-        color: #2c6079;
-        font-size: 0.92rem;
+        margin-bottom: 7px;
         line-height: 1.55;
+        color: #1e4a6b;
+        font-size: 0.98rem;
     }}
 
     .landing-info-muted {{
-        margin-top: 14px;
-        padding-top: 12px;
-        border-top: 1px solid rgba(15,76,117,0.10);
-        font-size: 0.88rem;
-        color: #517084 !important;
+        margin-top: 10px;
+        font-size: 0.92rem;
+        color: #1e4a6b !important;
     }}
 
     .hero-strip {{
@@ -698,10 +670,6 @@ st.markdown(
         .landing-hero {{
             padding: 34px 28px;
         }}
-
-        .landing-info-grid {{
-            grid-template-columns: 1fr;
-        }}
     }}
     </style>
     """,
@@ -709,7 +677,7 @@ st.markdown(
 )
 
 # =========================================================
-# DATA BASED ON NTB NET ZERO 2050 PATHWAY EXTRACTION
+# DATA BASED ON NTB ENERGY MASTERPLAN EXTRACTION
 # =========================================================
 current_mix_data = pd.DataFrame({
     "Source": ["HSD / Diesel", "MFO", "Biodiesel", "Coal", "Hydropower", "Solar PV", "Biomass / Cofiring"],
@@ -891,21 +859,13 @@ if page == "landing":
     st.markdown(
         f"""
         <div class="landing-info-card">
-            <div class="landing-info-grid">
-                <div>
-                    <div class="landing-info-label">{t('about_dashboard')}</div>
-                    <h3>NTB Renewable Energy Tracker</h3>
-                    <p>{t('landing_guidance')}</p>
-                    <p>
-                        <b>{t('footer_developed')} Muhammad Zurhalki</b> | {t('footer_anu')}<br>
-                        {t('footer_based')}
-                    </p>
-                </div>
-                <div class="landing-status-box">
-                    <div class="landing-status-title">{t('data_status')}</div>
-                    <div class="landing-status-text">{t('data_status_text')}</div>
-                </div>
-            </div>
+            <div class="landing-info-label">{t('about_dashboard')}</div>
+            <h3>NTB Renewable Energy Tracker</h3>
+            <p>{t('landing_guidance')}</p>
+            <p>
+                <b>{t('footer_developed')} Muhammad Zurhalki</b> | {t('footer_anu')}<br>
+                {t('footer_based')}
+            </p>
             <p class="landing-info-muted">{t('footer_illus')}</p>
         </div>
         """,
