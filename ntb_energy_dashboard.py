@@ -298,15 +298,15 @@ st.markdown(
         font-size: 1.05rem;
         box-shadow: 0 10px 24px rgba(15,76,117,0.23);
     }}
-    .insight-title {
+    .insight-title {{
         font-weight: 800;
         margin-bottom: 10px;
-    }
-    .rotating-insights {
+    }}
+    .rotating-insights {{
         position: relative;
         min-height: 62px;
-    }
-    .rotating-insights span {
+    }}
+    .rotating-insights span {{
         position: absolute;
         left: 0;
         right: 0;
@@ -315,19 +315,19 @@ st.markdown(
         animation: rotateInsight 50s infinite;
         line-height: 1.55;
         font-weight: 600;
-    }
-    .rotating-insights span:nth-child(1) { animation-delay: 0s; }
-    .rotating-insights span:nth-child(2) { animation-delay: 10s; }
-    .rotating-insights span:nth-child(3) { animation-delay: 20s; }
-    .rotating-insights span:nth-child(4) { animation-delay: 30s; }
-    .rotating-insights span:nth-child(5) { animation-delay: 40s; }
-   @keyframes rotateInsight {{
-    0% {{ opacity: 0; transform: translateY(8px); }}
-    4% {{ opacity: 1; transform: translateY(0); }}
-    16% {{ opacity: 1; transform: translateY(0); }}
-    20% {{ opacity: 0; transform: translateY(-8px); }}
-    100% {{ opacity: 0; transform: translateY(-8px); }}
-}}
+    }}
+    .rotating-insights span:nth-child(1) {{ animation-delay: 0s; }}
+    .rotating-insights span:nth-child(2) {{ animation-delay: 10s; }}
+    .rotating-insights span:nth-child(3) {{ animation-delay: 20s; }}
+    .rotating-insights span:nth-child(4) {{ animation-delay: 30s; }}
+    .rotating-insights span:nth-child(5) {{ animation-delay: 40s; }}
+    @keyframes rotateInsight {{
+        0% {{ opacity: 0; transform: translateY(8px); }}
+        4% {{ opacity: 1; transform: translateY(0); }}
+        16% {{ opacity: 1; transform: translateY(0); }}
+        20% {{ opacity: 0; transform: translateY(-8px); }}
+        100% {{ opacity: 0; transform: translateY(-8px); }}
+    }}
     .chart-callout {{
         background: rgba(255,255,255,0.74);
         border-left: 6px solid #1b98b0;
